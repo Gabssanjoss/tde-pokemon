@@ -20,6 +20,10 @@
                     <p class="text-gray-700 text-base mb-6">
                         <strong>Pontos de poder:</strong> {{ $entity->strenght }}
                     </p>
+
+                    <p class="text-gray-700 text-base mb-6">
+                        <strong>Treinador</strong> {{ $entity->coach->name}}
+                    </p>
                 </div>
 
                 <div class="px-6 pt-4 pb-6 flex justify-end">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Coach;
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class PokemonController extends Controller
 
     public function create()
     {   
-        return view('pokemon.create');
+        $coaches= Coach::all();
+        return view('pokemon.create', compact('coaches'));
     }
 
     public function store(Request $request)
@@ -26,6 +28,7 @@ class PokemonController extends Controller
             'name'=>$request->name,
             'type'=>$request->type,
             'strenght'=>$request->strenght,
+            'coach_id'=>$request->coach_id,
             'image'=>$image
 
         ]);

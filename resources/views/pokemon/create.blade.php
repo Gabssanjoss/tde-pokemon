@@ -36,6 +36,16 @@
       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="image" id="image" type="file" placeholder="Imagem do Pokémon" required>
     </div>
 
+    <label for="coach_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Treinador</label>
+  <select id="coach_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="coach_id">
+    <option selected>Escolha um treinador</option>
+		@foreach($coaches as $coach)
+    <option value="{{ $coach->id}}">{{ $coach->name }}</option>
+		@endforeach
+</select>
+
+
+
 
     <div class="flex items-center justify-center">
       <button class=" text-white bg-red-700 hover:scale-110 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
